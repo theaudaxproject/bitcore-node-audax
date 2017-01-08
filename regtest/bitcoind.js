@@ -7,7 +7,7 @@ var index = require('..');
 var log = index.log;
 
 var chai = require('chai');
-var bitcore = require('bitcore-lib-zcash');
+var bitcore = require('bitcore-lib-komodo');
 var BN = bitcore.crypto.BN;
 var async = require('async');
 var rimraf = require('rimraf');
@@ -26,7 +26,7 @@ var coinbasePrivateKey;
 var privateKey = bitcore.PrivateKey();
 var destKey = bitcore.PrivateKey();
 
-describe('Zcashd Functionality', function() {
+describe('Komodod Functionality', function() {
 
   before(function(done) {
     this.timeout(60000);
@@ -46,7 +46,7 @@ describe('Zcashd Functionality', function() {
       bitcoind = require('../').services.Bitcoin({
         spawn: {
           datadir: datadir,
-          exec: path.resolve(__dirname, '../bin/zcashd')
+          exec: path.resolve(__dirname, '../bin/komodod')
         },
         node: {
           network: regtestNetwork,
@@ -60,10 +60,10 @@ describe('Zcashd Functionality', function() {
         log.error('error="%s"', err.message);
       });
 
-      log.info('Waiting for Zcash to initialize...');
+      log.info('Waiting for Komodo to initialize...');
 
       bitcoind.start(function() {
-        log.info('Zcashd started');
+        log.info('Komodod started');
 
         client = new BitcoinRPC({
           protocol: 'http',
