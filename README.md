@@ -1,1 +1,1 @@
-Deprecated, Bitcore support is now built into Komodo. Please use https://github.com/KomodoPlatform/komodo/.
+Deprecated, Bitcore support is now built into Komodo. As of today it is only available in the dev branch of https://github.com/jl777/komodo but should make its way into https://github.com/KomodoPlatform/komodo/ soon. 
