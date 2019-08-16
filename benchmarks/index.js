@@ -5,7 +5,7 @@ var bitcoin = require('bitcoin');
 var async = require('async');
 var maxTime = 20;
 
-console.log('Komodo Service native interface vs. Komodo JSON RPC interface');
+console.log('Audax Service native interface vs. Audax JSON RPC interface');
 console.log('----------------------------------------------------------------------');
 
 // To run the benchmarks a fully synced Bitcore Core directory is needed. The RPC comands
@@ -28,7 +28,7 @@ var fixtureData = {
 
 var bitcoind = require('../').services.Bitcoin({
   node: {
-    datadir: process.env.HOME + '/.komodo',
+    datadir: process.env.HOME + '/.audax',
     network: {
       name: 'testnet'
     }
@@ -43,12 +43,12 @@ bitcoind.start(function(err) {
   if (err) {
     throw err;
   }
-  console.log('Komodo started');
+  console.log('Audax started');
 });
 
 bitcoind.on('ready', function() {
 
-  console.log('Komodo ready');
+  console.log('Audax ready');
 
   var client = new bitcoin.Client({
     host: 'localhost',
